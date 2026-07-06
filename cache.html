@@ -1,0 +1,61 @@
+<html manifest="psfree_lapse.appcache">
+<head>
+<meta charset="UTF-8">
+<title>o2JB Cache</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #120024;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.box {
+  width: 84%;
+  max-width: 560px;
+  margin: 18% auto 0;
+  padding: 24px;
+  background: #241047;
+  border: 1px solid #8b5cf6;
+}
+img {
+  width: 120px;
+  height: auto;
+}
+h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+#msgs {
+  margin-top: 10px;
+  color: #e9d5ff;
+  font-size: 22px;
+}
+</style>
+<script>
+history.replaceState(null, null, "index.html");
+var histlength = history.length;
+history.go(-histlength);
+function DLProgress(e) {
+  Percent = Math.round(e.loaded / e.total * 100);
+  msgs.innerHTML = "Installing Offline Cache ... " + Percent + "%";
+}
+function DisplayCacheProgress() {
+  setTimeout(function () { msgs.innerHTML = "Cache Installed Successfully"; }, 2000);
+  setTimeout(function () { location.reload(); }, 3000);
+}
+window.applicationCache.addEventListener("progress", DLProgress, false);
+window.applicationCache.oncached = function (e) { DisplayCacheProgress(); };
+window.applicationCache.onupdateready = function (e) { DisplayCacheProgress(); };
+</script>
+</head>
+<body>
+<div class="box">
+  <img src="assets/o2jb-logo-ps4.png" alt="o2JB">
+  <h1>o2JB</h1>
+  <div id="msgs">Preparing Offline Cache ...</div>
+</div>
+</body>
+</html>

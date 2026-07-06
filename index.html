@@ -1,0 +1,176 @@
+<!--
+Copyright (C) 2023-2025 anonymous
+
+This file is part of PSFree.
+
+PSFree is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>o2JB 9.00</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: logging;
+  src: url("fonts/LiberationMono-Regular.ttf");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #120024;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 24px;
+}
+
+.wrap {
+  width: 92%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.top {
+  min-height: 190px;
+  margin-bottom: 16px;
+  padding: 22px;
+  position: relative;
+  background: #241047;
+  border: 1px solid #8b5cf6;
+}
+
+.text {
+  width: 58%;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 9px;
+  color: #facc15;
+  border: 1px solid #facc15;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.subtitle {
+  margin: 0 0 12px;
+  color: #e9d5ff;
+  font-size: 19px;
+}
+
+.tagline {
+  margin: 0;
+  color: #d8b4fe;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.logo {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  width: 200px;
+  height: auto;
+}
+
+.console-card {
+  background: #050014;
+  border: 1px solid #8b5cf6;
+}
+
+.console-title {
+  padding: 10px 14px;
+  background: #35126b;
+  border-bottom: 1px solid #8b5cf6;
+  color: #f5d0fe;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#console {
+  height: 290px;
+  margin: 0;
+  padding: 16px;
+  overflow-y: auto;
+  color: #f3e8ff;
+  font-family: logging, monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+input {
+  width: 170px;
+  height: 26px;
+  margin: 14px 8px 0 0;
+  color: #fff;
+  background: #17002f;
+  border: 1px solid #a855f7;
+}
+
+.credits {
+  margin-top: 12px;
+  color: #e9d5ff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.credits strong {
+  display: block;
+  color: #fff;
+}
+</style>
+</head>
+<body>
+<script>
+if (window.applicationCache.status === 0) {
+  window.location.replace("cache.html");
+}
+</script>
+
+<div class="wrap">
+  <div class="top">
+    <div class="text">
+      <div class="badge">Firmware 9.00</div>
+      <h1>o2JB</h1>
+      <p class="subtitle">PS4 9.00 Jailbreak Host</p>
+      <p class="tagline">Galaxy theme with offline cache support.</p>
+    </div>
+    <img class="logo" src="assets/o2jb-logo-ps4.png" alt="o2JB">
+  </div>
+
+  <div class="console-card">
+    <div class="console-title">Status Log</div>
+    <pre id="console"></pre>
+  </div>
+
+  <div class="credits">
+    <strong>o2JB</strong>
+    made by Dm7g
+  </div>
+</div>
+
+<script src="payload.js"></script>
+<script type="module" src="./alert.mjs"></script>
+</body>
+</html>
